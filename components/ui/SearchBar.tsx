@@ -6,7 +6,8 @@ export default function SearchBar() {
   return (
     <View style={styles.container}>
       <FontAwesome name="search" size={20} color="dimgrey" />
-      <TextInput style={styles.input} />
+      <TextInput />
+      <Text style={styles.text}> Buscar no magalu</Text>
     </View>
   );
 }
@@ -21,8 +22,7 @@ const styles = StyleSheet.create({
     padding: 8,
     borderRadius: 16,
   },
-  input: {
-    marginLeft: 8,
-    flex: 1,
-  },
+  text: {
+    textAlign: "left"
+  }
 });

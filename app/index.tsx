@@ -1,55 +1,41 @@
-import { View, Text, TextInput, StyleSheet } from "react-native";
-import React, { useState } from "react";
-import { Link, useRouter } from "expo-router";
-import FullScreen from "@/components/containers/FullScreen";
-import FormInput from "@/components/form/FormInput";
-import Card from "@/components/containers/Card";
-import FormButton from "@/components/form/FormButton";
+import { View, Text, StyleSheet } from "react-native";
+import React from "react";
+import Scrollable from "@/components/containers/Scrollable";
+import HeaderWithTitle from "@/components/headers/HeaderWithTitle";
+import HeaderWithSearchBar from "@/components/headers/HeaderWithSearchBar";
+import AddressBar from "@/components/ui/AddressBar";
+import { Link } from "expo-router";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 import { Spacing } from "@/consts/spacing";
-import { Colors } from "@/consts/colors";
 
-export default function index() {
-  const router = useRouter();
-
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleLogin = () => {
-    router.push("/home");
-  };
-
+export default function home() {
   return (
-    <FullScreen>
-      <Card>
-        <Text style={styles.logo}>PDMagalu</Text>
+    <View style={styles.footer}>
+      <HeaderWithSearchBar headerBackVisible={true} />
 
-        <FormInput
-          label="Username"
-          value={username}
-          onChangeText={setUsername}
-        />
-        <FormInput
-          label="Password"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-        />
-
-        <FormButton onPress={handleLogin} title="Login!" />
-
-        <Link style={styles.registerLink} href="/register">
-          Novo por aqui? Registre-se!
-        </Link>
-      </Card>
-    </FullScreen>
+      <Link style={styles.changePassword} href="/changePassword">
+        mudar a senha
+      </Link>
+    </ View>
   );
 }
 
 const styles = StyleSheet.create({
+  footer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    marginBottom: 36
+  },
+  changePassword: {
+    color: "red",
+    fontWeight: "bold",
+    fontSize: 24,
+    textAlign: "center",
+  },
   registerLink: {
     marginTop: Spacing.md,
     fontSize: 12,
-    textAlign: "center",
+    textAlign: "center"
   },
   logo: {
     fontSize: 32,
