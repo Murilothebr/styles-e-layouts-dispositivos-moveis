@@ -32,14 +32,17 @@ export default function FormInput({ label, ...rest }: FormInput) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Spacing.md,
+    marginLeft: 30,
+    marginTop: Spacing.mt,
     padding: 4,
-    width: "100%",
+    width: "80%",
     borderBottomColor: "grey",
     borderBottomWidth: 1,
+    justifyContent: 'center',
   },
   label: {
-    fontSize: 12,
+    fontSize: 16,
+    color: 'gray'
   },
   focus: {
     color: Colors.primary,

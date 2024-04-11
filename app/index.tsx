@@ -5,8 +5,8 @@ import HeaderWithTitle from "@/components/headers/HeaderWithTitle";
 import HeaderWithSearchBar from "@/components/headers/HeaderWithSearchBar";
 import AddressBar from "@/components/ui/AddressBar";
 import { Link } from "expo-router";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import { Spacing } from "@/consts/spacing";
+import { Colors } from "@/consts/colors";
 
 export default function home() {
   return (
@@ -24,13 +24,20 @@ const styles = StyleSheet.create({
   footer: {
     flex: 1,
     justifyContent: 'flex-end',
-    marginBottom: 36
+    marginBottom: 36,
+    maxWidth: '100%',
+    alignItems: 'center',
   },
   changePassword: {
-    color: "red",
+    color: Colors.primary,
+    borderColor: Colors.primary,
     fontWeight: "bold",
     fontSize: 24,
     textAlign: "center",
+    borderRadius: 20,
+    borderWidth: 1, 
+    paddingVertical: 8,
+    paddingHorizontal: 16,
   },
   registerLink: {
     marginTop: Spacing.md,
